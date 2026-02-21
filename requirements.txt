@@ -2,4 +2,3 @@ requests
 twilio
 bs4
 dotenv
-os
