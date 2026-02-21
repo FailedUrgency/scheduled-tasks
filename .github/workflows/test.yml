@@ -23,7 +23,7 @@ jobs:
 
       - name: Check secrets are configured
         env:
-          MESS_ID: ${{ secrets.MESS_ID }}
+          MESS_ID: ${{ secrets.MESS_SID }}
           TOKEN: ${{ secrets.TOKEN }}
         run: |
           if [ -z "$MESS_ID" ]; then
