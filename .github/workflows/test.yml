@@ -26,7 +26,7 @@ jobs:
           MESS_ID: ${{ secrets.MESS_SID }}
           TOKEN: ${{ secrets.TOKEN }}
         run: |
-          if [ -z "$MESS_ID" ]; then
+          if [ -z "$MESS_SID" ]; then
             echo "MESS_ID secret is not set!"
             echo "Go to Settings > Secrets > Actions and add it."
             exit 1
