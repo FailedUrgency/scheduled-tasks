@@ -23,23 +23,23 @@ jobs:
 
       - name: Check secrets are configured
         env:
-          MY_EMAIL: ${{ secrets.MY_EMAIL }}
-          MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          MESS_ID: ${{ secrets.MESS_ID }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
-          if [ -z "$MY_EMAIL" ]; then
-            echo "MY_EMAIL secret is not set!"
+          if [ -z "$MESS_ID" ]; then
+            echo "MESS_ID secret is not set!"
             echo "Go to Settings > Secrets > Actions and add it."
             exit 1
           else
-            echo "MY_EMAIL is configured"
+            echo "MESS_ID is configured"
           fi
 
-          if [ -z "$MY_PASSWORD" ]; then
-            echo "MY_PASSWORD secret is not set!"
+          if [ -z "$TOKEN" ]; then
+            echo "TOKEN secret is not set!"
             echo "Go to Settings > Secrets > Actions and add it."
             exit 1
           else
-            echo "MY_PASSWORD is configured"
+            echo "TOKEN is configured"
           fi
 
           echo ""
@@ -63,13 +63,7 @@ jobs:
             exit 1
           fi
 
-          if [ -f "birthdays.csv" ]; then
-            echo "birthdays.csv found"
-          else
-            echo "birthdays.csv not found!"
-            exit 1
-          fi
-
+          
           echo ""
           echo "All required files found!"
 
